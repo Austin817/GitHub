@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add+remove</title>
+    <style>
+        body {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+
+        .btm {
+            width: 100%;
+            margin: 50px;
+
+
+        }
+
+        input {
+            width: 180px;
+            height: 50px;
+            font-size: 30px;
+        }
+
+
+        .result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            padding: 10px;
+            border: 1px solid black;
+
+            background-color: aquamarine;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        button {
+            font-size: 30px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <input id="give" type="text">
+    <div class="result"></div>
+
+
+    <div class="btm">
+        <button class="add">加入</button>
+        <button class="dele">移除</button>
+        <button class="search">搜尋</button>
+        <button class="show">顯示</button>
+
+    </div>
+
+    <script>
+
+        var myArry = [];
+
+
+        // 新增結果
+        var addBtn = document.querySelector('.add');
+        addBtn.addEventListener('click', function () {
+
+            var inputValue = document.querySelector('#give').value;
+            var ans = document.querySelector('.result');
+
+            myArry.push(inputValue);
+            ans.innerHTML = myArry;
+            console.log(myArry);
+
+        })
+
+
+
+        // 移除結果
+
+        var deleBtn = document.querySelector('.dele');
+        deleBtn.addEventListener('click', function () {
+
+
+            var inputValue = document.querySelector('#give').value;
+            var ans = document.querySelector('.result');
+            var sAns = myArry.indexOf(inputValue);
+            console.log(myArry);
+            console.log(sAns);
+            if (sAns != -1) {
+                myArry.splice(sAns, 1);
+            }
+
+
+            var ans = document.querySelector('.result')
+            ans.innerHTML = myArry;
+
+        })
+        
+        // 搜尋次序
+        var searchBtn = document.querySelector('.search');
+        searchBtn.addEventListener('click', function () {
+
+
+            var inputValue = document.querySelector('#give').value;
+            var sAns = myArry.indexOf(inputValue)
+
+            if(sAns<0){
+                sAns='沒有找到任何東西捏'
+            }
+
+            var ans = document.querySelector('.result')
+            ans.innerHTML = sAns
+        })
+
+
+        // 顯示次序
+        var showBtn = document.querySelector('.show');
+        showBtn.addEventListener('click', function () {
+
+
+            var inputValue = document.querySelector('#give').value;
+
+            var ans = document.querySelector('.result')
+            ans.innerHTML = myArry;
+        })
+
+
+
+   
+
+
+
+
+
+
+
+        // console.log('inputValue',inputValue);
+        // searchResult 即是POS
+        // console.log('searchResult',searchResult);
+
+        // -1表示不存在的
+        // id可以直接寫
+
+        // searchBtn.addEventListener('click',function(){
+
+        //     var inputValue = document.querySelector('#inputValue').value;
+        //     console.log('inputValue',inputValue);
+
+        //     var searchResult = resuitArry.indexOf(inputValue)
+        //     console.log('searchResult',searchResult);
+
+        //     if(searchResult !=-1){
+        //         resuitArry.splice(searchResult,1);
+        //         console.log('resuitArry',resuitArry);
+        //     }
+
+        //     var result = document.querySelector('.result')
+        //     result.innerHTML = resuitArry
+        // })
+
+
+
+
+        // inputValue.addEventListener('click',function(){
+        //     inputAnswe.innerHTML= inputValue.result
+
+        // })
+
+        // var inputValue = document.querySelector('.give');
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

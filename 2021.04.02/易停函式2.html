@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        /* 1. 宣告函式的方法有兩種！ */
+        // 但是別管它們的什麼述句不述句，只要記得 function 開頭的函式述句會讓函式整體被提升（hoisted）至最上方，而以 var 宣告的函式運算式則會遵循 var 的 hoisting 規則
+
+        console.log(func1_1); // 印出 f func1() {}；代表程式自動將函式述句提升至最上方，就算我們在它宣告之前就試圖印出它也一樣
+        console.log(func1_2); // 印出 undefined，此時的 func2 其實已經被提升至最上方，但並未給值（如果這邊不熟記得看一下相簿內的 var 說明）
+
+        function func1_1() { } // 第一種，稱為函式述句（function statement），func1_1 為函式的名稱
+        var func1_2 = function () { }; // 第二種，稱為函式運算式（function expression），func1_2 為函式的名稱
+        var func1_3 = function func1_4() { }; // 你再想一下！！！別將一個已經有函式名稱的函式再賦予給一個變數！！！
+
+        console.log(func1_2); // 印出 f () {}，賦值之後才能看到 var 宣告的東西（如果這邊不熟記得看一下相簿內的 var 說明）
+        console.log(func1_3); // 印出 ƒ func1_4() {}
+        // console.log(func1_4); // 印出 Uncaught ReferenceError: func1_4 is not defined，代表 func1_4 變數（也是函數名稱）已經失去作用
+
+        /* 2. 呼叫函式的方法 */
+        function func2_1() {
+            console.log(1);
+        }
+
+        func2_1(); // 印出 1；在函式名稱之後加上小括弧 ()，就等於執行函式主體（大括弧 {} 內）的程式碼
+
+        /* 3. 函式的主要用途：可複用 */
+
+        var logValue = 0;
+
+        function log() {
+            logValue++; // 由於 logValue 是在函式主體之外的全域變數，所以可以直接從函式內讀取並改變 logValue 的值
+            logvalue = logvalue + 1
+        }
+
+        log(); // 印出 0
+        log(); // 印出 1
+        log(); // 印出 2
+        console.log(logValue); // 印出 3，證明從函式的確永久地改變了全域變數 logValue 的值，並且也透過單純呼叫函式做了三次 logValue++ 的動作
+
+        /* 4. 函式的傳遞與接收 */
+
+        function func4_1(a, b) {
+            // 此處定義了函式可以收到參數（parameter） a 與 b，函式如果接收一個以上的參數需要以逗號 , 隔開
+            // var a, b; => 在函式的小括弧中定義參數，也相當於在函式最上方宣告了變數 a 與 b
+            console.log(a, b); // 印出 真的 好想睡
+        }
+
+        func4_1("真的", "好想睡"); // 呼叫函式時傳入的數，稱為引數（argument），引數也以逗號 , 隔開，會自動尋找相同位置上該函式的參數值
+
+        /* 5. 可以在函式中呼叫自己 */
+
+        var selfCount = 0; // 定義一個全域變數以累計呼叫自己的次數
+        func5_1(); // 先呼叫自己一次（順便提醒一下，這邊能呼叫函式是因為函式會提升 hoisting！）
+        function func5_1() {
+            if (selfCount < 3) {
+                console.log(selfCount); // 會印出三行，分別為 0 1 2
+                selfCount++; // 每次執行自己，就 +1 到全域變數 selfCount
+                func5_1(); // 做完工作後，再呼叫自己一次；請注意在函式中呼叫自己的行為跟 for 迴圈相當接近，如果函式沒有明確的中斷點也會陷入死迴圈而導致記憶體用盡後當機
+            }
+        }
+
+        /* 6. 函式也可以回傳值 */
+        function func6_1() {
+            return "6_1 回傳了一句話！";
+        }
+        function func6_2() {
+            console.log("6_2 直接印出了一句話");
+        }
+
+        // 先直接呼叫函式看看差別
+        console.log(func6_1()); // 不會印出東西，因為函式主體內沒有 console.log
+        console.log(func6_2()); // 印出了 "6_2 直接印出了一句話"
+
+        // 再將函式的呼叫結果賦予給兩個變數
+        var v6_1 = func6_1();
+        var v6_2 = func6_2();
+        console.log(v6_1); // 印出 "6_1 回傳了一句話！"
+        console.log(v6_2); // 印出 undefined
+
+　  // 差別在於：函式如果沒有 return 只相當於執行了程式碼，而有 return 的函式會在執行後返回一個值，並將這個值指定給函式的呼叫
+    </script>
+
+
+
+</body>
+
+</html>

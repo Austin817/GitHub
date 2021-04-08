@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .all {
+            width: 100vw;
+            height: 100vh;
+            background-color: #F06060;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .time {
+            background-color: darkorange;
+            width: 150px;
+            height: 100px;
+            border: 0;
+            border-bottom-left-radius: 80px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .start {
+            background-color: wheat;
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 30px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .grades {
+            background-color: khaki;
+            width: 150px;
+            height: 100px;
+            border: 0;
+            border-bottom-right-radius: 80px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .box-area {
+            background-color: #dddddd;
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 10px;
+        }
+
+        .box {
+            margin: 1%;
+            border-radius: 5px;
+        }
+
+        .disappear {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="time"></div>
+        <div class="start">Start Game</div>
+        <div class="grades"></div>
+        <div class="box-area"></div>
+    </div>
+
+
+
+
+    <script>
+
+
+        var n;
+
+        n = 2;
+
+        var Rounds;
+
+        Rounds = 0;
+
+        var mask;
+
+        mask = 0.1;
+
+        var score;
+
+        score = 0;
+
+        var t;
+
+        t = 60;
+
+
+
+
+
+
+
+
+
+        var start = document.querySelector('.start')
+
+        start.addEventListener('click', function () {
+
+            document.querySelector('.grades').innerHTML = 'Score:' + score;
+
+            document.querySelector('.time').innerHTML = t;
+
+            game();
+
+            showTime();
+        })
+
+
+
+
+
+
+
+
+
+        function game() {
+
+
+            start.classList.add('disappear');
+
+            function getColorRandom() {
+                return Math.floor(Math.random() * 200);
+            };
+
+            var roundColor = [getColorRandom(), getColorRandom(), getColorRandom()]
+
+
+            function getBoxRandom() {
+                return Math.floor(Math.random() * n ** 2) + 1;
+            };
+
+            // console.log(getBoxRandom());
+
+
+
+            for (var i = 1; i <= n ** 2; i++) {
+
+
+                document.querySelector('.box-area').innerHTML += `<div class="box" 
+                style="background-color:rgb(${roundColor[0]}, ${roundColor[1]}, ${roundColor[2]});
+                width: calc((100% / ${n}) - 2%);
+                height: calc((100% / ${n}) - 2%);"
+                ></div>`;
+                // console.log(i);
+
+
+            };
+
+
+            var ansBox = document.querySelector(`.box-area>div:nth-child(${getBoxRandom()})`);
+
+            ansBox.style.opacity = mask;
+
+            ansBox.addEventListener('click', function () {
+
+
+                levelUp_score();
+
+                levelUp_Rounds();
+
+                document.querySelector('.grades').innerHTML = 'Score:' + score;
+
+                document.querySelector('.box-area').innerHTML = " ";
+
+
+                if (n < 18) {
+                    levelUp_opacity();
+                }
+
+                if (Rounds == n - 1) {
+                    levelUp_box();
+                    Rounds = 0;
+                }
+
+                game();
+
+
+            });
+
+
+        }
+
+        function levelUp_box() {
+            n++;
+            // console.log(n);
+        };
+
+        function levelUp_Rounds() {
+            Rounds++;
+            // console.log(Rounds);
+        };
+
+        function levelUp_opacity() {
+            mask = mask + 0.05;
+            // console.log(mask);
+        };
+
+        function levelUp_score() {
+            score++;
+        }
+
+
+        function showTime() {
+            t -= 1;
+            document.querySelector('.time').innerHTML = 'Time:' + t;
+
+            if (t == 0) {
+                alert('時間到!');
+                history.go(0);
+            }
+
+            setTimeout(showTime, 1000);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

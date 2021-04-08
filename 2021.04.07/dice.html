@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+        .start{
+
+            width: 40%;
+            height: 50px;
+            background-color: whitesmoke;
+
+        }
+        
+        .clear{
+
+            width: 40%;
+            height: 50px;
+            background-color: whitesmoke;
+
+        }
+
+
+
+.ans-list{
+    width:80%;
+    background-color: rgb(202, 136, 13);
+    padding: 10px;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <button class="start">開始</button>
+    <button class="clear">清除</button>
+    <div class="ans"></div>
+    <div class="ans-list"></div>
+
+    <script>
+
+        var startBtn = document.querySelector('.start')
+        startBtn.addEventListener('click',function () {
+
+            
+        while (true){
+            var a,b,c,cnt;
+            a=Math.floor(Math.random()*6+1);
+            b=Math.floor(Math.random()*6+1);
+            c=Math.floor(Math.random()*6+1);
+
+            if(a==b && b==c && c==a){
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                console.log("CONGRATULATINS \n");
+                break;
+            }
+
+
+            else{
+                console.log("try");
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                console.log("LMAO \n");
+            }
+        }
+
+
+            
+        })
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

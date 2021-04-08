@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .all {
+            background-color: silver;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .header>h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        #number1,#number2 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #calc,#clear {
+            width: 80px;
+            height: 40px;
+            background-color: whitesmoke;
+            text-align: center;
+        }
+
+        #ans {
+            width: 200px;
+            height: 30px;
+            background-color: wheat;
+            border: 1px solid black;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="header">
+            <h1>BMI 計算機</h1>
+            <p></p>
+        </div>
+        <div class="main flex">
+            <input id="number1" type="text">
+            <input id="number2" type="text">
+            <button id="calc">計算</button>
+            <button id="clear">重新填寫</button>
+            <div id="ans"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+
+
+
+    <script>
+
+        var inputValue1 = document.querySelector('#number1');
+        var inputValue2 = document.querySelector('#number2');
+
+
+        console.log(typeof(inputValue1));
+        console.log(typeof(inputValue2));
+
+
+        // 輸入文字
+        // 按按鈕(監聽點擊事件)
+        //1.取得按鈕
+        var calcBtn = document.querySelector('#calc')
+        //2.綁定監聽事件
+        calcBtn.addEventListener('click', function () {
+            //3.撰寫點擊後要做的事情 
+            // 取得輸入框內容
+
+            // 計算
+            // 數字+數字
+            console.log(Number(inputValue1.value) + Number(inputValue2.value));
+            // 顯示結果
+            var result = (Number(inputValue1.value) / Number(inputValue2.value) ** 2);
+            document.getElementById('ans').innerHTML = result;
+
+        })
+
+
+        var clearBtn = document.querySelector('#clear');
+
+        clearBtn.addEventListener('click', function () {
+
+            inputValue1.value = '';
+            inputValue2.value = '';
+
+            document.getElementById('ans').innerHTML = " ";
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

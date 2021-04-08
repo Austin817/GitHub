@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-two</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+
+            justify-content: center;
+            padding: 20px;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+
+        .start {
+
+            width: 40%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border: none;
+
+        }
+
+        .clear {
+
+            width: 40%;
+            height: 50px;
+            background-color: red;
+            color: white;
+            border: none;
+
+        }
+
+
+
+        .ans {
+            color: white;
+            font-size: large;
+            width: calc(80% - 20px);
+            background-color:black;
+            padding: 10px;
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./img/tenor.gif">
+    <button class="start">開始</button>
+    <button class="clear">清除</button>
+    <img src="./img/tenor.gif">
+    <div class="ans"></div>
+
+    <script>
+        
+        var clearBtn = document.querySelector('.clear')
+        clearBtn.addEventListener('click', function () {
+            var putOut = document.querySelector('.ans');
+                putOut.innerHTML = ''
+
+            })
+
+
+
+
+
+        // 按下按鈕
+        // 隨機產生骰子
+        // 比較三顆骰子
+        //骰相同 結束 
+        //骰不同 繼續 
+
+
+        // 使用反向思考
+
+        var startBtn = document.querySelector('.start')
+        startBtn.addEventListener('click', function () {
+            var a,b,c,n;
+            a = 0;
+            b = 1;
+            c = 2;
+            n = 0;
+
+            // 不可
+            // (!(a == b == c))  即:只要三數不全相等即執行 然 a相等於b時 只
+            // while (!(a == b == c))  {
+
+
+
+
+            // 可
+            // (!(a == b && b == c))  即:直觀的否定三數相等達成
+            while (!(a == b && b == c)) {
+
+
+            // 可
+            // (a != b || b != c)即: a不等於b 或者 b不等於c 其中一個符合即可產生 若 a=b 但b不等於c 已符合其中一項 故執行
+            //     a=b 且 b=c時 不符合 (a不等於b 或者 b不等於c) 故運算停止
+
+
+
+            // while (a != b || b != c) {
+
+                n++
+                a = Math.floor(Math.random() * 6 + 1);
+                b = Math.floor(Math.random() * 6 + 1);
+                c = Math.floor(Math.random() * 6 + 1);
+
+                var putOut = document.querySelector('.ans');
+                putOut.innerHTML = `第${n}次執行結果為&nbsp${a}${b}${c}<br> ${putOut.innerHTML}`;
+                console.log(a, b, c);
+
+            }
+
+        })
+
+
+        // 使用正向思考
+
+        
+        
+        // var startBtn = document.querySelector('.start')
+
+        // startBtn.addEventListener('click', function () {
+            
+        //     var n = 0;
+        //     while (true) {
+        //         var a, b, c;
+        //         n++;
+        //         a = Math.floor(Math.random() * 6 + 1);
+        //         b = Math.floor(Math.random() * 6 + 1);
+        //         c = Math.floor(Math.random() * 6 + 1);
+                
+        //         var putOut = document.querySelector('.ans');
+        //         putOut.innerHTML = `第${n}次執行結果為${a}${b}${c}<br> ${putOut.innerHTML}`
+
+        //         if (a == b && b == c) {
+
+        //             break;
+        //         }
+
+
+        //     }
+        // })
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

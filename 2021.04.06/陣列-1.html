@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+
+
+        #ans {
+            width: 300px;
+            height: 30px;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="ans"></div><br>
+    <input id="input_value" type="text">
+    <button id="add">加入</button>
+    <button id="remove">移除</button>
+    <button id="search">搜尋</button>
+    <button id="show">顯示</button>
+
+    <script>
+
+        // var box = ['a','b','c'];
+
+        // box.push('d'); //新增陣列元素
+
+        // box[0] = 'f'; //替換指定元素
+
+        // var last = box.pop(); //移除最後的元素
+
+        // var newLength = box.unshift('A') //加到陣列前端
+
+        // var pos = box.indexOf('b'); //尋找陣列號碼,找不到為 -1
+
+        // console.log(pos);
+
+        // console.log(box);
+
+
+        var box = [];
+
+
+        ans.innerHTML = box;
+
+        add.addEventListener('click', function () {
+            console.log(input_value.value);
+            box.push(input_value.value);
+            ans.innerHTML = box;
+        });
+
+        show.addEventListener('click', function () {
+            ans.innerHTML = box;
+        });
+
+        search.addEventListener('click', function () {
+            ans.innerHTML = box.indexOf(input_value.value);
+        });
+
+
+        remove.addEventListener('click', function () {
+
+            if ((box.indexOf(input_value.value)) != -1) {
+                box.splice((box.indexOf(input_value.value)), 1);
+            };
+
+            ans.innerHTML = box;
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #ans{
+            width: 100px;
+            height: 40px;
+            border: 1px solid black;
+        }
+
+        input[name=gender]:checked{
+            width: 30px;
+            height: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- 1 & 2 -->
+
+
+
+    <!-- <br>國文:<input id="ch" type="text">
+    英文:<input id="eng" type="text">
+    數學:<input id="math" type="text"></br>
+
+    結果:<div id="ans"></div>
+    <button id="calc">計算</button> -->
+
+
+
+
+    <!-- 3 -->
+
+
+
+    年齡:
+    <select name="" id="age">
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+    </select><br><br>
+
+    <input id="male" type="radio" name="gender" value="male">男性
+    <input id="female" type="radio" name="gender" value="female">女性<br><br>
+
+    <div id="ans"></div><br><br>
+
+    <button id="btn">送出</button>
+
+
+
+
+    <script>
+
+        // 1
+
+        // var calcBtn = document.querySelector('#calc');
+
+        // calcBtn.addEventListener('click', function () {
+        //     var chValue = document.querySelector('#ch').value;
+        //     var engValue = document.querySelector('#eng').value;
+        //     var mathValue = document.querySelector('#math').value;
+
+        //     var result = (Number(chValue) + Number(engValue) + Number(mathValue)) / 3;
+
+        //     if (result >= 60) {
+        //         document.getElementById('ans').innerHTML = result + '分，及格';
+        //     }
+
+        //     if (result < 60) {
+        //         document.getElementById('ans').innerHTML = result + '分，不及格';
+        //     }
+
+
+        // })
+
+
+
+
+
+
+
+
+        // 2
+
+        // var calcBtn = document.querySelector('#calc');
+
+        // calcBtn.addEventListener('click', function () {
+        //     var chValue = document.querySelector('#ch').value;
+        //     var engValue = document.querySelector('#eng').value;
+        //     var mathValue = document.querySelector('#math').value;
+
+        //     var result = (Number(chValue) + Number(engValue) + Number(mathValue)) / 3;
+
+        //     if (result >= 90) {
+        //         document.getElementById('ans').innerHTML = result + '分，A級';
+        //     }else if (result >= 80) {
+        //         document.getElementById('ans').innerHTML = result + '分，B級';
+        //     }else if (result >= 70) {
+        //         document.getElementById('ans').innerHTML = result + '分，C級';
+        //     }else if (result >= 60) {
+        //         document.getElementById('ans').innerHTML = result + '分，D級';
+        //     }else {
+        //         document.getElementById('ans').innerHTML = result + '分，死當';
+        //     }
+
+
+        // })
+
+
+
+
+
+
+
+
+        // 3
+
+        var resultBtn = document.querySelector('#btn')
+
+        resultBtn.addEventListener('click',function(){
+            var age = Number(document.querySelector('#age').value)
+            console.log(age);
+
+            var Gender = document.querySelector('input[name="gender"]:check').value
+            console.log(Gender)
+
+            
+
+        })
+
+
+
+
+
+
+
+
+        // 條件判斷式
+        // if(條件判斷){ 符合條件要做的內容 }
+
+            // var score = 60;
+            // if( score >= 60 ){
+            //     console.log('及格');
+            // }
+
+            // if( score < 60 ){
+            //     console.log('不及格');
+            // }
+
+
+
+
+        // 多條件判斷式
+
+
+
+
+        // 邏輯運算子  &&  ||  !
+        // && 及 and (乘號)
+        // || 或 or (加號)
+        // ! 反向
+
+
+            //國英數
+            //只要有兩個及格就可以畢業
+
+            // var ch = 60;
+            // var en = 50;
+            // var math = 60;
+
+
+            // if(ch>=60 && en >=60 ){
+            //     console.log('畢業');
+            // }else if(ch>=60 && math >=60 ){
+            //     console.log('畢業');
+            // }else if(en>=60 && math >=60 ){
+            //     console.log('畢業');
+            // }else {
+            //     console.log('退學');
+            // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

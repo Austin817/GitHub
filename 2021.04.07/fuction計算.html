@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+
+
+
+    <script>
+
+// 選取顏色套用
+
+        var colorArry = ['red', 'pink', 'blue', 'purple', 'teal'];
+
+        var boxs = document.querySelectorAll('div');
+        boxs.forEach(function (box, index) {
+
+
+            box.style.backgroundColor = colorArry[index]
+
+        })
+
+// 用於取每個陣列之值
+        divs.forEach(function(放入第一個參數,放入第二個參數) {
+            console.log(放入第一個參數);
+            console.log(放入第二個參數);
+            
+        })
+
+        // 函式
+        // function 函式名稱(參數){
+        //          要做的事
+        // }
+
+        // !!後面有()及表示函式 
+        // ex.內建函式:
+        // 彈出視窗:   alert('顯示文字')
+
+
+        //HOISTING!!JS在讀取時會自動將函式飛升
+        // 先定義 後使用 先使用 再定義皆可
+        function printNumber() {
+            console.log('1');          
+        }
+
+        // 直接執行
+        printNumber() 
+
+        // 作為內建函式執行
+        printNumber 
+
+        document.querySelector('div').addEventListener('click',printNumber)
+    
+        // querySelector只執行第一個 querySelectorAll執行所有符合
+
+        // 改變abcde參數
+        function printNumber(a,b,c,d,e) {
+            console.log(a);          
+            console.log(b);          
+            console.log(c);          
+            console.log(d);          
+            console.log(d);          
+            console.log(e);          
+        }
+
+        var a=1
+        var b=1
+        var c=1
+        var d=3
+        var e=4
+
+        // 優先使用子層 找不到 外找 直到找到值 若無 就是undified
+        var nB1=10
+        var nB2=2
+        var nB3=5
+
+        function printNumber(nB1,nB2) {
+            console.log(nB1+nB2+nB3);
+            
+        }
+
+        printNumber(nB1,nB2)
+
+        // 運算參數!!答案為 0.5
+        var nB1=10
+        var nB2=2
+
+        function printNumber(nB1,nB2) {
+            console.log(nB1/nB2);  
+        }
+
+        printNumber(nB2,nB1)
+
+
+        // 優先使用子層 找不到 外找 直到找到值 若無 就是undefined
+        var nB1=10
+        var nB2=2
+        var nB3=5
+
+        function printNumber(nB1,nB2) {
+
+         nB1 +=1
+         nB2 +=1
+         nB3 +=1
+            
+        }
+
+        printNumber(nB1,nB2)
+        console.log(nB1+nB2+nB3);
+        // 10 2 6
+        // 因nB3取自外層 因此nB3改變 
+
+
+        // 參數亦會不斷改變
+        var nB1=10
+        var nB2=2
+        var nB3=5
+
+        function printNumber(nB1,nB2) {
+            // nB1=7+1=8 nB2=8+1=9 -> nB3=5+9=14(影響父層)
+
+         nB1 +=1
+         nB2 +=1
+        //  此時nB2已更改為9
+         nB3 +=nB2
+            
+        }
+
+        printNumber(7,8)
+        console.log(nB1+nB2+nB3);
+        // 8 9 14
+        // 因nB3取自外層(全域變數) 因此nB3改變 
+
+
+
+        // 是否有參數
+
+        var a=1
+        var b=2
+
+        function xy(a,b) {
+         a +=b
+        }
+        
+        function ZZ() {
+         a +=b
+        }
+
+        a +=b 
+        // 此時 a=1+2=3
+
+        xy(a,b)
+
+        // 此時只是代數進去 並未回傳
+
+        ZZ()
+
+        // 因函式無數代入 向全域取值 並影響父層數值
+
+
+        console.log(a,b);
+
+         // 故 a=3+2=5
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+// 選取陣列
+
+        var resuitArry = ['a', 'b', 'c', 'd', 'e'];
+
+        // 取得陣列內容
+        // 方法1
+
+
+        for (var i = 0; i < 5; i++) {
+            console.log(resuitArry[i]);
+        }
+
+
+        //    resuitArry.forEach(function(變數){
+        //        console.log(value);
+        //    })
+
+        // foreach 表示依次取出物件
+
+        方法2
+
+        resuitArry.forEach(function (value) {
+            console.log(value);
+        })
+
+        方法3
+
+        resuitArry.forEach(function (value, index) {
+            console.log(index);
+            console.log(value);
+        })
+
+
+        resuitArry.forEach(function (value, index) {
+            console.log(index, value);
+
+        })
+
+    </script>
+
+</body>
+
+</html>
