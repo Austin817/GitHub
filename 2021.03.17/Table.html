@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+
+        body{
+            margin: 0;
+        }
+
+
+        nav {
+            background-color: gray;
+            width: 100%;
+            height: 90px;
+            padding-top: 10px;
+        }
+
+        #nav-logo {
+            background-color: hotpink;
+            width: 80px;
+            height: 80px;
+            margin-left: 30px;
+            float: left;
+        }
+
+        #nav-menu {
+            background-color: lightblue;
+            width: 630px;
+            height: 40px;
+            margin-top: 25px;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .nav-menu-btn {
+            background-color: mediumblue;
+            width: 200px;
+            height: 40px;
+            margin-bottom: 10px;
+            float: right;
+            margin-left: 10px;
+        }
+
+        section{
+            background-color:green;
+            width: 100%;
+            height: calc(100vh - 100px);
+            position: relative;
+        }
+
+        #section-menu{
+            background-color:orange ;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .section-menu-btn-1{
+            background-color: palegoldenrod;
+            width: 100%;
+            height: calc(50% - 5px);
+            margin-bottom: 10px;
+        }
+
+        .section-menu-btn-2{
+            background-color: red;
+            width: calc(50% - 5px);
+            height: calc(50% - 5px);
+            margin-right: 10px;
+            float: left;
+        }
+
+        .section-menu-btn-3{
+            background-color: saddlebrown;
+            width: calc(50% - 5px);
+            height: calc(50% - 5px);
+            float: right;
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div id="nav-icon"></div>
+        <div id="nav-logo"></div>
+        <div id="nav-menu">
+            <div class="nav-menu-btn"></div>
+            <div class="nav-menu-btn"></div>
+            <div class="nav-menu-btn"></div>
+        </div>
+    </nav>
+
+    <section>
+        <div id="section-menu">
+            <div class="section-menu-btn-1"></div>
+            <div class="section-menu-btn-2"></div>
+            <div class="section-menu-btn-3"></div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

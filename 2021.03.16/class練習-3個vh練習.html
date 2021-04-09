@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+
+        .container {
+            width: 80%;
+            height: auto;
+            margin: auto;
+        }
+
+        nav {
+            background-color: coral;
+            width: 80%;
+            height: 100px;
+            position: fixed;
+            top: 10px;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            border-radius: 50px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .menu {
+            background-color: hotpink;
+            width: auto;
+            height: auto;
+            margin-right: 10px;
+            float: right;
+        }
+
+        .menu-btn {
+            width: auto;
+            height: auto;
+            background-color: mediumblue;
+            float: left;
+            margin-left: 10px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            opacity: 0.3;
+            transition: opacity .5s, background-color .5s;
+        }
+
+        .menu-btn:hover {
+            background-color: rgb(255, 0, 0);
+            opacity: 1;
+        }
+
+        .menu-btn:active {
+            background-color: green;
+            transition: background-color .1s;
+        }
+
+        a {
+            color: mintcream;
+        }
+
+
+
+        .area {
+            background-image: url(./IMG/lake-5996427_1920.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            background-attachment: fixed;
+        }
+
+        #area-1 {
+            background-image: url(./IMG/lake-5996427_1920.jpg);
+        }
+
+        #area-2 {
+            background-image: url(./IMG/long-eared-owl-6063351_1920.jpg);
+        }
+
+        #area-3 {
+            background-image: url(./IMG/tree-5414036_1920.jpg);
+        }
+
+        .area-mask {
+            background-color: rgba(0, 0, 0, 0.3);
+            height: 50vh;
+            width: 100%;
+            position: absolute;
+            top: 50vh;
+        }
+
+        .area-mask-btn {
+            background-color: chartreuse;
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo"></div>
+            <div class="menu">
+                <a href="#area-1" class="menu-btn">按鈕1</a>
+                <a href="#area-2" class="menu-btn">按鈕2</a>
+                <a href="#area-3" class="menu-btn">按鈕3</a>
+            </div>
+        </nav>
+        <div id="area-1" class="area">
+            <div class="area-mask">
+                <div class="area-mask-btn"></div>
+            </div>
+        </div>
+        <div id="area-2" class="area">
+            <div class="area-mask">
+                <div class="area-mask-btn"></div>
+            </div>
+        </div>
+        <div id="area-3" class="area">
+            <div class="area-mask">
+                <div class="area-mask-btn"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

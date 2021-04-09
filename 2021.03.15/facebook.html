@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            background-color: mediumblue;
+            width: 100%;
+            height: 56px;
+            position: relative;
+        }
+
+        #search{
+            border-radius: 5px;
+            width: 250px;
+            height: 30px;
+            position: absolute;
+            top: 11px;
+            left: 200px;
+            /* border-style: none; */
+            border: 2px solid yellow;
+            cursor:pointer;
+
+        }
+
+        #banner {
+            width: 70%;
+            max-width: 1000px;
+            height: 410px;
+            background-color: lightskyblue;
+            margin: auto;
+            position: relative;
+            border-radius: 0px 0px 25px 25px;
+        }
+
+        #avatar {
+            background-color: gold;
+            width: 168px;
+            height: 168px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            z-index: 999;
+            border-radius: 85px;
+            background-image: url(IMG/cat-649164_1920.jpg);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.205);
+            border: 3px solid springgreen;
+        }
+
+        #cover {
+            background-color: seagreen;
+            width: 100%;
+            height: 350px;
+            position: relative;
+            background-image: url(IMG/shops-5992277_1920.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #menu {
+            background-color: pink;
+            width: 100%;
+            height: 60px;
+            border-radius: 0px 0px 25px 25px;
+        }
+
+        #upload-btn {
+            background-color: tomato;
+            width: 120px;
+            height: 40px;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <input id="search" type="text" placeholder="輸入文字">
+    </nav>
+    <div id="banner">
+        <div id="avatar"></div>
+        <div id="cover">
+            <div id="upload-btn"></div>
+        </div>
+        <div id="menu"></div>
+    </div>
+
+</body>
+
+</html>

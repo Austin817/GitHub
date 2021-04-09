@@ -1,0 +1,427 @@
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: gray;
+    width: 366px;
+    height: 100vh;
+    float: left;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+
+
+
+#nav-logo{
+    background-image: url(IMG/bentley-3947882_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 75px;
+    background-color: hotpink;
+    box-shadow: 4px 6px 0px 0 rgba(0, 0, 0, 0.15);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+
+
+#nav-menu{
+    /* background-color: lightblue; */
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+
+.nav-menu-btn{
+    /* background-color: blue; */
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    display: block;
+    text-decoration:none;
+    transition: all .5s;
+}
+
+
+.nav-menu-btn:hover{
+    color:navy;
+    letter-spacing: 6px;
+    font-size: 30px;
+    text-decoration:underline;
+}
+
+.nav-menu-btn:visited{
+    color:midnightblue;
+}
+
+.nav-menu-btn:active{
+    color: springgreen;
+}
+
+
+
+section{
+    background-color:whitesmoke;
+    float: right;
+    width: calc(100% - 366px);
+    height: 100vh;
+    position: relative;
+    transition: all .5s;
+}
+
+
+
+#section-menu{
+    background-color:whitesmoke ;
+    width: 965px;
+    height: 570px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .5s;
+}
+
+
+
+.section-menu-btn-1{
+    background-image: url(IMG/car-4169977_1920.jpg);
+    background-size: cover;
+    background-position:top;
+    background-color: palegoldenrod;
+    width: 315px;
+    height: 570px;
+    margin-right: 10px;
+    float: left;
+    transition: all 1s;
+    border-radius: 10px;
+}
+
+
+
+.section-menu-btn-2{
+    background-image: url(IMG/porsche-4795517_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+    width: 315px;
+    height: 570px;
+    margin-right: 10px;
+    float: left;
+    transition: all 1s;
+    border-radius: 10px;
+}
+
+
+.section-menu-btn-3{
+    background-image: url(IMG/car-race-438467_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: saddlebrown;
+    width: 315px;
+    height: 570px;
+    float: left;
+    transition: all 1s;
+    border-radius: 10px;
+}
+
+
+.section-menu-btn-1:hover,.section-menu-btn-2:hover,.section-menu-btn-3:hover{
+    transform: scale(1.1);
+    box-shadow:  6px 8px 5px 0 rgba(0, 0, 0, 0.3),-6px 8px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.section-menu-btn-1:hover{
+    background-position:left;
+}
+
+.section-menu-btn-2:hover{
+    background-position-x:left;
+}
+
+.section-menu-btn-3:hover{
+    background-position-x:right;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1280px) {
+
+    #section-menu{
+        width: 750px;
+    }
+
+    .section-menu-btn-1{
+        width: 100%;
+        height: 280px;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        float: none;
+    }
+
+    .section-menu-btn-2{
+        width: 370px;
+        height: 280px;
+    }
+
+    .section-menu-btn-3{
+        width: 370px;
+        height: 280px;
+        float: right;
+    }
+
+    .section-menu-btn-1:hover{
+        background-position:center;
+    }
+    
+    .section-menu-btn-2:hover{
+        background-position-x:left;
+        background-size: 145%;
+    }
+    
+    .section-menu-btn-3:hover{
+        background-position-x:right;
+        background-size: 120%;
+    }
+
+
+}
+
+
+@media (max-width:768px) {
+
+    nav {
+        width: 100%;
+        height: 90px;
+        float: none;
+        padding-top: 10px;
+        z-index: 0;
+    }
+
+   
+
+    #nav-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        margin-left: 30px;
+        float: left;
+    }
+
+    #nav-menu {
+        width: 320px;
+        margin: 0;
+        margin-right: 30px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+
+
+    .nav-menu-btn {
+        padding: 5px;
+        float: right;
+        margin: 0;
+        margin-left: 30px;
+        text-align: center;
+        font-size: 22px;
+        transition: all .3s;
+    }
+
+    .nav-menu-btn:hover{
+        background-color: cadetblue;
+        color:navy;
+        letter-spacing:normal;
+        font-size: 25px;
+        text-decoration:none;
+        transform: translate(-10%,-10%);
+        box-shadow: 5px 5px 0px 0 black;
+        border-radius: 8px;
+    }
+
+
+    section{
+        float: none;
+        width: 100%;
+        height: calc(90vh - 50px);
+        position: static;
+        padding-top: calc(10vh - 50px);
+    }
+
+    #section-menu{
+        width: 80vh;
+        height: 80vh;
+        position: static;
+        left: none;
+        top: none;
+        transform: none;
+        margin: 0 auto;
+    }
+
+
+    .section-menu-btn-1{
+        height: calc(50% - 5px);
+    }
+
+
+    .section-menu-btn-2{
+        width: calc(50% - 5px);
+        height: calc(50% - 5px);
+    }
+
+    .section-menu-btn-3{
+        width: calc(50% - 5px);
+        height: calc(50% - 5px);
+    }
+
+
+    .section-menu-btn-1:hover{
+        background-position: center;
+    }
+    
+    .section-menu-btn-2:hover{
+        background-position-x:left;
+        background-size: cover;
+    }
+    
+    .section-menu-btn-3:hover{
+        background-position-x:right;
+        background-size: cover;
+    }
+
+    
+    
+
+}
+
+@media (max-width:375px) {
+
+    nav{
+        position: relative;
+        z-index: 1;
+
+    }
+
+
+    #nav-icon{
+        background-image:url(IMG/auto-3260293_1920.jpg);
+        background-position:top;
+        background-size: 160%;
+        background-color: springgreen;
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+        margin-left: 15px;
+        float: left;
+        border-radius: 10px;
+    }
+
+    #nav-icon:hover~#nav-menu{
+        background-color: whitesmoke;
+        opacity: 1;
+    }
+
+    #nav-menu:hover{
+        opacity: 1;
+    }
+    
+
+
+    #nav-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        margin: 0 auto;
+        float: none;
+    }
+
+
+    #nav-menu {
+        background-color: whitesmoke;
+        clear: left;
+        float: left;
+        margin: 0;
+        margin-left: 15px;
+        width: 150px;
+        border-radius: 10px;
+        position: relative;
+        right: auto;
+        top:-10px;
+        z-index: 1;
+        transform: none;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+
+
+    .nav-menu-btn {
+        background-color:whitesmoke;
+        border-radius: 10px;
+        float: none;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+
+    section{
+        height: calc(100vh - 100px);
+        padding: 0;
+    }
+    
+
+    #section-menu{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+
+    .section-menu-btn-1{
+        height: 33%;
+        margin: 0;
+    }
+
+    .section-menu-btn-2{
+        width: 100%;
+        height: 34%;
+        float: none;
+        margin: 0;
+    }
+
+    .section-menu-btn-3{
+        width: 100%;
+        height: 33%;
+        float: none;
+    }
+
+    .section-menu-btn-1:hover{
+        background-position:left;
+    }
+    
+    .section-menu-btn-2:hover{
+        background-position-x:left;
+        background-size: 145%;
+    }
+    
+    .section-menu-btn-3:hover{
+        background-position-x:right;
+        background-size: 120%;
+    }
+
+
+
+}

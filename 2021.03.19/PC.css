@@ -1,0 +1,297 @@
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: gray;
+    width: 366px;
+    height: 100vh;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+#nav-logo{
+    background-color: hotpink;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+
+
+#nav-menu{
+    background-color: lightblue;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+
+.nav-menu-btn{
+    background-color: mediumblue;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+section{
+    background-color:green;
+    float: right;
+    width: calc(100% - 366px);
+    height: 100vh;
+    position: relative;
+}
+
+
+
+#section-menu{
+    background-color:orange ;
+    width: 965px;
+    height: 570px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+.section-menu-btn-1{
+    background-color: palegoldenrod;
+    width: 315px;
+    height: 570px;
+    margin-right: 10px;
+    float: left;
+}
+
+
+
+.section-menu-btn-2{
+    background-color: red;
+    width: 315px;
+    height: 570px;
+    margin-right: 10px;
+    float: left;
+}
+
+
+.section-menu-btn-3{
+    background-color: saddlebrown;
+    width: 315px;
+    height: 570px;
+    float: left;
+}
+
+
+
+
+@media (max-width: 1280px) {
+
+    #section-menu{
+        width: 750px;
+    }
+
+    .section-menu-btn-1{
+        width: 100%;
+        height: 280px;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        float: none;
+    }
+
+    .section-menu-btn-2{
+        width: 370px;
+        height: 280px;
+    }
+
+    .section-menu-btn-3{
+        width: 370px;
+        height: 280px;
+        float: right;
+    }
+
+
+}
+
+
+@media (max-width:768px) {
+
+    nav {
+        width: 100%;
+        height: 90px;
+        float: none;
+        padding-top: 10px;
+        z-index: 0;
+    }
+
+   
+
+    #nav-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        margin-left: 30px;
+        float: left;
+    }
+
+    #nav-menu {
+        background-color: lightblue;
+        margin: 0;
+        margin-right: 20px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+
+
+    .nav-menu-btn {
+        float: right;
+        margin: 0;
+        margin-left: 10px;
+        text-align: center;
+        font-size: 25px;
+    }
+
+
+    section{
+        float: none;
+        width: 100%;
+        height: calc(90vh - 50px);
+        position: static;
+        padding-top: calc(10vh - 50px);
+    }
+
+    #section-menu{
+        width: 80vh;
+        height: 80vh;
+        position: static;
+        left: none;
+        top: none;
+        transform: none;
+        margin: 0 auto;
+    }
+
+
+    .section-menu-btn-1{
+        height: calc(50% - 5px);
+    }
+
+
+    .section-menu-btn-2{
+        width: calc(50% - 5px);
+        height: calc(50% - 5px);
+    }
+
+    .section-menu-btn-3{
+        width: calc(50% - 5px);
+        height: calc(50% - 5px);
+    }
+    
+
+}
+
+@media (max-width:375px) {
+
+    nav{
+        position: relative;
+        z-index: 1;
+
+    }
+
+
+    #nav-icon{
+        background-color: springgreen;
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+        margin-left: 15px;
+        float: left;
+    }
+
+
+    #nav-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        margin: 0 auto;
+        float: none;
+    }
+
+
+    #nav-menu {
+        background-color: springgreen;
+        clear: left;
+        float: left;
+        margin: 0;
+        margin-left: 15px;
+        position: relative;
+        right: auto;
+        top:-10px;
+        z-index: 1;
+        transform: translate(0,-60px);
+        width: 60px;
+        height: 60px;
+        font-size: 0;
+        opacity: 0;
+        transition: transform .5s,opacity .3s ;
+    }
+
+
+    #nav-menu:hover {
+        background-color: lightblue;
+        margin-left: 15px;
+        width: auto;
+        height: auto;
+        font-size: 20px;
+        transform:none;
+        opacity: 1;
+    }
+
+
+    .nav-menu-btn {
+        float: none;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+
+    section{
+        height: calc(100vh - 100px);
+        padding: 0;
+    }
+    
+
+    #section-menu{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+
+    .section-menu-btn-1{
+        height: 33%;
+        margin: 0;
+    }
+
+    .section-menu-btn-2{
+        width: 100%;
+        height: 34%;
+        float: none;
+        margin: 0;
+    }
+
+    .section-menu-btn-3{
+        width: 100%;
+        height: 33%;
+        float: none;
+    }
+
+
+
+}
