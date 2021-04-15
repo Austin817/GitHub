@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        
+
+        // 發送請求
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-5C1CD113-A5B7-4C82-A72D-0D7D37314F22&format=JSON')
+
+            // 將回應的資料取出
+            .then(function (response) {
+                return response.json()
+            })
+
+            // 使用得到的資料
+            .then(function (result) {
+
+                // 讀到資料
+                console.log(result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]);
+                console.log(typeof (result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]));
+                
+
+                var section = document.querySelector('section');
+               // section.innerHTML = result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]; 
+                section.innerHTML = "溫度" + result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"];
+
+                // 把資料長到畫面上
+
+
+
+
+                
+            });
+
+
+            // 天氣 API
+            // 一卡片一縣市
+            // 顯示溫度、溼度、....
+
+
+
+    </script>
+
+</body>
+
+</html>

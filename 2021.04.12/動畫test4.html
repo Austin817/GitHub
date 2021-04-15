@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all {
+            display: flex;
+            line-height: 40px;
+        }
+
+        .fix {
+            height: 40px;
+            /* background-color: burlywood; */
+        }
+
+        .window {
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .move {
+            /* background-color: cadetblue; */
+            animation: austin;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes austin {
+
+            0% {
+                margin-top: 0;
+            }
+
+            50%{
+                margin-top: -40px;
+            }
+
+            100% {
+                margin-top: -80px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="all">
+        <div class="fix">123</div>
+        <div class="window">
+            <div class="move">
+                <span>4</span><br>
+                <span>456</span><br>
+                <span>456789</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 1 */
+
+
+        /* .cross{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .cross .line{
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition-duration: .5s;
+        }
+
+        .cross:hover .line:first-child{
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        .cross:hover .line:last-child{
+            transform: translate(-50%,-50%) rotate(45deg);
+        } */
+
+
+
+
+
+
+
+
+
+        /* 2 */
+
+
+        /* .cross{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .cross div{
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            opacity: 1;
+            transform: translate(-50%,-50%);
+            transition-duration: .5s;
+        }
+
+        .cross .line1{
+            top: 20%;
+        }
+        
+        .cross .line3{
+            top: 80%;
+        }
+
+        .cross:focus div:first-child{
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(405deg);
+        }
+        .cross:focus div:last-child{
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(-405deg);
+        }
+        .cross:focus div:nth-child(2){
+            opacity: 0;
+        } */
+
+
+
+
+
+
+
+        /* 3 */
+
+
+        .cross{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .cross div{
+            width: 80px;
+            height: 10px;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            opacity: 1;
+            transform: translate(-50%,-50%);
+            transition-duration: 1s,.1s;
+            transition-property: top,transform ;
+        }
+
+        .cross .line1{
+            top: 20%;
+        }
+        
+        .cross .line3{
+            top: 80%;
+        }
+
+        .cross:focus div:first-child{
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        .cross:focus div:last-child{
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        .cross:focus div:nth-child(2){
+            opacity: 0;
+        }
+        .cross:focus div{
+            transition-duration: .1s,1s;
+            transition-property: top,transform ;
+        }
+
+
+
+
+        
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- 1 -->
+
+    <!-- <div class="cross">
+        <div class="line"></div>
+        <div class="line"></div>
+    </div> -->
+
+
+
+
+
+
+    <!-- 2 -->
+
+    <!-- <div class="cross" tabindex="1">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div> -->
+
+
+
+
+
+
+    <!-- 3 -->
+
+
+    <div class="cross" tabindex="1">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+
+
+
+    
+</body>
+</html>

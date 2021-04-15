@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+
+    姓名<input id="inputName" type="text"><br>
+    年齡<input id="inputAge" type="text"><br>
+    性別<input id="inputGender" type="text"><br><br>
+    <button id="sent">送出</button>
+    <button id="search">查看</button><br><br>
+
+
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年齡</th>
+                <th>性別</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <script>
+
+        // 物件(object)
+        // 空物件 {}
+
+        // var box1 = {};
+
+        // {鍵:值} {key:value}
+        // 1.鍵名稱要用雙引號包著
+        // 2.鍵名稱盡量用英文
+
+        // 值可以放任意資料型態
+        // var box2 = {"name":'123'};
+        // console.log(box2["name"]);
+
+        // 多組鍵值請以逗號分隔 {"鍵":值,"鍵":值}
+        // var box2 = {"name":"leo","age":27,"gender":"male"};
+        // console.log(box2["age"]);
+
+
+        // var box2 = {"name":123};
+
+        // 新增 讀取 更新 刪除  CURD   Create Read Update Delete   增刪查改
+
+
+        // 新增
+        // box2["age"] = 17;
+        // console.log(box2);
+
+        // box2["name"] = 17;  //新增一樣鍵值會蓋掉原本的鍵值
+        // console.log(box2);
+
+
+        // 刪除
+        // delete box2["age"];
+        // console.log(box2);
+
+
+        var allData = [];
+
+        var i = 0;
+
+
+
+        var sent = document.querySelector('#sent')
+
+        sent.addEventListener('click', function () {
+
+
+
+            // 拿資料
+            var nameData = document.querySelector('#inputName').value;
+            var ageData = document.querySelector('#inputAge').value;
+            var genderData = document.querySelector('#inputGender').value;
+
+            // console.log(nameData,ageData,genderData);
+
+            // 保存資料
+            var newData = {
+                "name": nameData,
+                "age": ageData,
+                "gender": genderData,
+            };
+
+            allData.push(newData)
+
+            var tbody = document.querySelector('tbody');
+            tbody.innerHTML +=
+                `
+            <tr>
+                <td>${nameData}</td>
+                <td>${ageData}</td>
+                <td>${genderData}</td>
+                <td><button class="delete_${i}">刪除</button></td>
+            </tr>`;
+
+            var deleteBtns = document.querySelectorAll('.delete');
+            deleteBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e = e || window.event;
+                    e = e.target || e.srcElement;
+                    if (e.nodeName === 'BUTTON') {
+                        var id = e.id;
+                        // str.split('分割依據')
+                        var currentIndex = id.split('_')[1]
+                        console.log(currentIndex);
+                        allData.splice(currentIndex,1);
+
+                        var tbody = document.querySelector('tbody');
+                        tbody.innerHTML='';
+                        allData.forEach(function (item,index) {
+                            // item (可以替換成任意數) 
+                            console.log(item);
+                            tbody.innerHTML += 
+                            `
+                            <tr>
+                                <td>${item["name"]}</td>
+                                <td>${item["age"]}</td>
+                                <td>${item["gender"]}</td>
+                                <td><button class="delete_${index}">刪除</button></td>
+                            </tr>`;
+                        })
+
+                    }
+                });
+            });
+
+            i++;
+
+            var search = document.querySelector('#search');
+            search.addEventListener('click', function () {
+                console.log(allData);
+            });
+
+            // console.log(name,age,gender);
+            // list["name"] = inputName.value
+            // // console.log(list["name"]);
+            // // console.log(list);
+            // // console.log(name);
+
+            // // name.innerHTML = list["name"]
+
+            
+            // this = document.querySelector('.delete-btn')
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

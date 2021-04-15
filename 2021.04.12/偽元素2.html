@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            box-sizing:border-box;
+        }
+
+        .row{
+            width: 100%;
+            display:flex;
+        }
+
+        .pic1,
+        .pic2 {
+            padding: 250px;
+            position: relative;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .pic1::before,
+        .pic2::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            transition-duration: 1s;
+        }
+
+        .pic1:hover::before,
+        .pic2:hover::before {
+            transform: scale(1.5);
+        }
+
+        .pic1::before {
+            content: '';
+            background-image: url(https://cdn.pixabay.com/photo/2021/01/21/09/11/mountains-5936682_1280.jpg);
+        }
+
+        .pic2::before {
+            content: '';
+            background-image: url(https://cdn.pixabay.com/photo/2021/04/01/20/49/trees-6143244_1280.jpg);
+        }
+
+
+        .pic1::after,
+        .pic2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition-duration: 1s;
+        }
+
+        .pic1:hover::after,
+        .pic2:hover::after {
+            opacity: 1;
+        }
+
+        p{
+            font-size: 30px;
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="row">
+        <div class="col-6 pic1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, eius!</p>
+        </div>
+        <div class="col-6 pic2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, iusto.</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

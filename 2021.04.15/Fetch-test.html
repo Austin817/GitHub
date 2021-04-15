@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,thead,tr {
+            border: 1px solid #333;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>區別</th>
+                    <th>校名</th>
+                    <th>時間</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+
+
+
+    <script>
+
+        var arr = [];
+
+        var allData = [];
+
+        // 發送請求
+        fetch('https://datacenter.taichung.gov.tw/swagger/OpenData/1c5e97c9-8232-419b-8109-e3b0ed585676')
+
+            // 將回應的資料取出
+            .then(function (response) {
+                return response.text();
+            })
+
+            // 使用得到的資料
+            .then(function (result) {
+
+                // console.log(result);
+
+                // 讀到資料
+
+                // 將 result 變 object
+                var data = JSON.parse(result);
+                console.log(data);
+                // 將 object 變 string
+                // console.log(JSON.stringify(data));
+
+
+                // 把資料長到畫面上
+                var tbody = document.querySelector('tbody');
+                tbody.innerHTML = '';
+                data.forEach(function (item, index, array) {
+
+                    tbody.innerHTML +=
+                        `
+                    <tr>
+                        <td>${item["區別"]}</td>
+                        <td>${item["學校名稱"]}</td>
+                        <td>${item["上課日"]}</td>
+                    </tr>`
+                        ;
+
+
+                });
+
+
+
+            });
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

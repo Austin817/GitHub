@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .all {
+            background-color: cornflowerblue;
+            width: 80%;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat {
+            background-color: cadetblue;
+            width: 98%;
+            height: 97%;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: darkkhaki;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 5px;
+            display: flex;
+        }
+
+        .header-avatar {
+            background-color: darkorange;
+            width: 70px;
+            height: 70px;
+            border-radius: 60px;
+            margin-right: 10px;
+        }
+
+        .header-title{
+            background-color: darkorchid;
+            margin-right: auto;
+        }
+
+        .header-icon{
+            background-color: darksalmon;
+        }
+
+        .main{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .main>div:nth-child(odd){
+            align-self: flex-start;
+        }
+        .main>div:nth-child(even){
+            flex-direction: row-reverse;
+        }
+        .main>div:nth-child(even)>.message-avatar{
+            background-color:khaki;
+        }
+
+        
+
+        .footer{
+            height: 40px;
+            background-color: darkseagreen;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding: 5px 15px;
+            display: flex;
+        }
+
+        .footer-text{
+            flex-grow: 1;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
+        .footer>button{
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .message{
+            display: flex;
+            margin: 10px;
+        }
+
+        .message-avatar{
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: darkseagreen;
+        }
+
+        .message-word{
+            background-color: gray;
+            line-height: 40px;
+            margin: 0 10px;
+            padding: 0  10px;
+            border-radius: 999em;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="all">
+        <div class="chat">
+            <div class="header">
+                <div class="header-avatar"></div>
+                <div class="header-title">
+                    <h1>gl4ddvd</h1>
+                    <p>iiijp</p>
+                </div>
+                <div class="header-icon">
+                    <button>X</button>
+                </div>
+            </div>
+            <div class="main">
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">huidhcdhsuc</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">doijiejivejij</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">r,bpbffbffb</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">kojjisvv</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+                <div class="message">
+                    <div class="message-avatar"></div>
+                    <div class="message-word">qjppvkdrvvcs</div>
+                </div>
+            </div>
+            <div class="footer">
+                <input class="footer-text" type="text">
+                <button>sent</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>
