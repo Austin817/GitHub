@@ -7,13 +7,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+        padding: 2px 16px;
+    }
+
+    .containerBig{
+        padding: 5%;
+        display: grid;
+        grid-template :repeat(2, 1fr) / repeat(4, 1fr);
+        grid-gap: 2%;
+        
+    }
+</style>
 
 <body>
 
-    <section>
+    <div class="containerBig">
+        <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4>縣市</h4>
+                <p>時間</p>
+                <p>溫度</p>
+                <p>降雨</p>
+                <p>狀態</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4>縣市</h4>
+                <p>時間</p>
+                <p>溫度</p>
+                <p>降雨</p>
+                <p>狀態</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4>縣市</h4>
+                <p>時間</p>
+                <p>溫度</p>
+                <p>降雨</p>
+                <p>狀態</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4>縣市</h4>
+                <p>時間</p>
+                <p>溫度</p>
+                <p>降雨</p>
+                <p>狀態</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4>縣市</h4>
+                <p>時間</p>
+                <p>溫度</p>
+                <p>降雨</p>
+                <p>狀態</p>
+            </div>
+        </div>
+    </div>
+    
 
-    </section>
+   <section>
 
+   </section>
 
 
 
@@ -27,7 +105,7 @@
 
     <script>
 
-        
+
 
         // 發送請求
         fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-5C1CD113-A5B7-4C82-A72D-0D7D37314F22&format=JSON')
@@ -43,18 +121,23 @@
                 // 讀到資料
                 console.log(result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]);
                 console.log(typeof (result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]));
-                
 
-                var section = document.querySelector('section');
-               // section.innerHTML = result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]; 
-                section.innerHTML = "溫度" + result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"];
+                console.log(result);
 
                 // 把資料長到畫面上
-
-
+                // var section = document.querySelector('section');
+                // // section.innerHTML = result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]; 
+                // section.innerHTML = "溫度" + result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"];
 
 
                 
+
+
+
+
+
+
+
             });
 
 
