@@ -14,7 +14,7 @@
         width: 100%;
     }
 
-    
+
 
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -24,74 +24,24 @@
         padding: 2px 16px;
     }
 
-    .containerBig{
+    .containerBig {
         padding: 5%;
         display: grid;
-        grid-template :repeat(2, 1fr) / repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 2%;
-        
     }
 </style>
 
 <body>
 
     <div class="containerBig">
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4>縣市</h4>
-                <p>時間</p>
-                <p>溫度</p>
-                <p>降雨</p>
-                <p>狀態</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4>縣市</h4>
-                <p>時間</p>
-                <p>溫度</p>
-                <p>降雨</p>
-                <p>狀態</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4>縣市</h4>
-                <p>時間</p>
-                <p>溫度</p>
-                <p>降雨</p>
-                <p>狀態</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4>縣市</h4>
-                <p>時間</p>
-                <p>溫度</p>
-                <p>降雨</p>
-                <p>狀態</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4>縣市</h4>
-                <p>時間</p>
-                <p>溫度</p>
-                <p>降雨</p>
-                <p>狀態</p>
-            </div>
-        </div>
+
     </div>
-    
 
-   <section>
 
-   </section>
+    <section>
+
+    </section>
 
 
 
@@ -129,8 +79,35 @@
                 // // section.innerHTML = result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"]; 
                 // section.innerHTML = "溫度" + result["records"]["location"][0]["weatherElement"][4]["time"][0]["parameter"]["parameterName"];
 
+                var container = document.querySelector('.containerBig');
+                var data = result["records"]["location"];
 
-                
+                data.forEach(function (item, index) {
+
+                    var city = data[index]["locationName"];
+                    var time = data[index]["weatherElement"][0]["time"][1]["startTime"];
+                    var temp = data[index]["weatherElement"][4]["time"][1]["parameter"]["parameterName"];
+                    var rain = data[index]["weatherElement"][1]["time"][1]["parameter"]["parameterName"];
+                    var status = data[index]["weatherElement"][0]["time"][1]["parameter"]["parameterName"];
+                    var statusNumber = data[index]["weatherElement"][0]["time"][1]["parameter"]["parameterValue"];
+                    console.log(statusNumber);
+
+                    container.innerHTML +=
+                    `
+                    <div class="card">
+                        <img src="img_avatar.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4>縣市 : ${city}</h4>
+                            <p>時間 : ${time}</p>
+                            <p>溫度 : ${temp} 度C</p>
+                            <p>降雨 : ${rain} %</p>
+                            <p>狀態 : ${status}</p>
+                        </div>
+                    </div>`
+                });
+
+
+
 
 
 

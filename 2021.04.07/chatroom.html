@@ -50,16 +50,22 @@
             margin-right: 10px;
         }
 
-        .header-title{
-            background-color: darkorchid;
+        .header-title {
+            /* background-color: darkorchid; */
             margin-right: auto;
         }
 
-        .header-icon{
-            background-color: darksalmon;
+        .header-icon {
+            /* background-color: darksalmon; */
         }
 
-        .main{
+        .header-avatar {
+            background-image: url(img/profile.jpg);
+            background-position: 25% 25%;
+            background-size: 180%;
+        }
+
+        .main {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -67,19 +73,29 @@
             overflow-y: scroll;
         }
 
-        .main>div:nth-child(odd){
+        .main>div:nth-child(odd) {
             align-self: flex-start;
         }
-        .main>div:nth-child(even){
+
+        .main>div:nth-child(odd)>.message-avatar {
+            background-image: url(img/profile.jpg);
+            background-position: 25% 25%;
+            background-size: 180%;
+        }
+
+        .main>div:nth-child(even) {
             flex-direction: row-reverse;
         }
-        .main>div:nth-child(even)>.message-avatar{
-            background-color:khaki;
+
+        .main>div:nth-child(even)>.message-avatar {
+            background-image: url(img/_u93ad205288642d0ab0114d5a7d936a36.jpeg);
+            background-position: 25% 25%;
+            background-size: 160%;
         }
 
-        
 
-        .footer{
+
+        .footer {
             height: 40px;
             background-color: darkseagreen;
             border-bottom-left-radius: 15px;
@@ -88,38 +104,36 @@
             display: flex;
         }
 
-        .footer-text{
+        .footer-text {
             flex-grow: 1;
             margin-right: 5px;
             border-radius: 5px;
         }
 
-        .footer>button{
+        .footer>button {
             padding: 5px;
             border-radius: 5px;
         }
-        
-        .message{
+
+        .message {
             display: flex;
             margin: 10px;
         }
 
-        .message-avatar{
+        .message-avatar {
             width: 40px;
             height: 40px;
             border-radius: 40px;
             background-color: darkseagreen;
         }
 
-        .message-word{
+        .message-word {
             background-color: gray;
             line-height: 40px;
             margin: 0 10px;
-            padding: 0  10px;
+            padding: 0 10px;
             border-radius: 999em;
         }
-
-        
     </style>
 </head>
 
@@ -130,8 +144,8 @@
             <div class="header">
                 <div class="header-avatar"></div>
                 <div class="header-title">
-                    <h1>gl4ddvd</h1>
-                    <p>iiijp</p>
+                    <h1>李宛潔</h1>
+                    <p>黏</p>
                 </div>
                 <div class="header-icon">
                     <button>X</button>
@@ -202,8 +216,8 @@
 
 
 
-    
-    
+
+
 
 
 
