@@ -1,0 +1,10 @@
+@import "variable";
+
+// % placeholder 是佔位符的意思，搭配 @extend 使用
+// 通常會定義幾組常用的元件，重複呼叫使用
+%btn {
+  @include size(150px, 30px, 15px);
+  @include flex(center, center);
+  @include position-absolute-center();
+  font-size: 16px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var i = 10;
+
+      // setTimeout 是指執行一次的計時器，執行完後就停止了
+      var timer1 = setTimeout(function () {
+        console.log("1");
+      }, 5000);
+
+      // clearTimeout 在 Timeout 執行前，可直接停止 Timeout
+      clearTimeout(timer1);
+
+      // setInterval 會不停的重複執行，直到他被關閉為止
+      var timer2 = setInterval(function () {
+        console.log(i);
+        i--;
+        if (i < 0) {
+          clearInterval(timer2);
+        }
+      }, 1000);
+
+      // 停止執行該 Interval
+      // clearInterval(timer2);
+    </script>
+  </body>
+</html>

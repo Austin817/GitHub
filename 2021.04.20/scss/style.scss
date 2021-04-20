@@ -1,0 +1,68 @@
+@import "template";
+@import "variable";
+
+.block {
+  @include size(600px, 600px);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    background-color: yellow;
+
+    .box {
+      background-color: red;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: chartreuse;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    border: {
+      top: solid 3px green;
+      bottom: solid 3px blue;
+      left: solid 3px #752;
+      right: solid 3px #568;
+    }
+
+    // .btn {
+    //   @include size(150px, 30px, 15px);
+    //   @include flex(center, center);
+    //   font-size: 16px;
+    // }
+    // 這段移至 % = placeholder 內 (template分頁)
+
+    .btn-blue {
+      background-color: $btn_blue;
+      @extend %btn;
+    }
+    .btn-red {
+      background-color: $btn_red;
+      @extend %btn;
+    }
+    .btn-yellow {
+      background-color: $btn_yellow;
+      @extend %btn;
+    }
+  }
+}
+
+ul {
+  @for $i from 1 to 6 {
+    // 也可以改成  1 through 5
+    .list-item#{$i} {
+      @include size(100px * $i, 100px);
+      border: 1px solid black;
+    }
+  }
+}

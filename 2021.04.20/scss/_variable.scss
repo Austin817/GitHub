@@ -1,0 +1,29 @@
+// 變數 $ 開頭
+$btn_blue: blue;
+$btn_red: red;
+$btn_yellow: yellow;
+$btn_fz: 18px;
+
+// @mixin 使用時要搭配 @include
+// @mixin 可以帶參數，如果變數有預設值，則使用時不用帶參數
+// @mixin 通常做為 function 使用
+@mixin size($w, $h, $bdrs: 0) {
+  // $bdrs:0 , 0 = 預設值 ，有設預設值的話  @include 內不需打參數 則為 0
+  width: $w;
+  height: $h;
+  border-radius: $bdrs;
+}
+
+@mixin flex($j, $a) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin position-absolute-center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}

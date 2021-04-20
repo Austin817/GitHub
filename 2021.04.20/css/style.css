@@ -1,0 +1,98 @@
+.block .box .btn-blue, .block .box .btn-red, .block .box .btn-yellow {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 16px;
+}
+
+.block {
+  width: 600px;
+  height: 600px;
+  border-radius: 0;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.block:hover {
+  background-color: yellow;
+}
+
+.block:hover .box {
+  background-color: red;
+}
+
+.block::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: chartreuse;
+}
+
+.block .box {
+  width: 100px;
+  height: 100px;
+  border-top: solid 3px green;
+  border-bottom: solid 3px blue;
+  border-left: solid 3px #752;
+  border-right: solid 3px #568;
+}
+
+.block .box .btn-blue {
+  background-color: blue;
+}
+
+.block .box .btn-red {
+  background-color: red;
+}
+
+.block .box .btn-yellow {
+  background-color: yellow;
+}
+
+ul .list-item1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+ul .list-item2 {
+  width: 200px;
+  height: 100px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+ul .list-item3 {
+  width: 300px;
+  height: 100px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+ul .list-item4 {
+  width: 400px;
+  height: 100px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+ul .list-item5 {
+  width: 500px;
+  height: 100px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=style.css.map */
