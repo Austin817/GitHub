@@ -9,7 +9,7 @@
     <style>
 
         #ans{
-            width: 100px;
+            width: 300px;
             height: 40px;
             border: 1px solid black;
         }
@@ -64,8 +64,8 @@
         <option value="30">30</option>
     </select><br><br>
 
-    <input id="male" type="radio" name="gender" value="male">男性
-    <input id="female" type="radio" name="gender" value="female">女性<br><br>
+    <input id="male" type="radio" name="gender" value="男性">男性
+    <input id="female" type="radio" name="gender" value="女性">女性<br><br>
 
     <div id="ans"></div><br><br>
 
@@ -143,13 +143,17 @@
         var resultBtn = document.querySelector('#btn')
 
         resultBtn.addEventListener('click',function(){
-            var age = Number(document.querySelector('#age').value)
+            var age = Number(document.querySelector('#age').value);
             console.log(age);
 
-            var Gender = document.querySelector('input[name="gender"]:check').value
-            console.log(Gender)
+            var Gender = document.querySelector('input[name="gender"]:checked').value;
+            console.log(Gender);
 
-            
+            if (age >= 18 && Gender == '男性'){
+                ans.innerHTML = `你是${age}歲${Gender}，要當兵`;
+            }else{
+                ans.innerHTML = `你是${age}歲${Gender}，不用當兵`;
+            };
 
         })
 
