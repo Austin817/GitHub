@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <style>
         html,
         body {
@@ -24,9 +23,15 @@
             padding: 0;
         }
 
+        span{
+            text-align: center;
+            padding: 3px;
+        }
+
         .swiper-container {
             width: 100%;
             height: 100%;
+
         }
 
         .swiper-slide {
@@ -49,17 +54,23 @@
             align-items: center;
         }
     </style>
+
+
+
 </head>
 
 <body>
 
 
-
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide"><img
+                    src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt=""></div>
+            <div class="swiper-slide"><img
+                    src="https://images.pexels.com/photos/1494665/pexels-photo-1494665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt=""></div>
             <div class="swiper-slide">Slide 3</div>
             <div class="swiper-slide">Slide 4</div>
             <div class="swiper-slide">Slide 5</div>
@@ -71,16 +82,65 @@
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
         var swiper = new Swiper('.swiper-container', {
-            direction: 'vertical',
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"></span>' + '<button>123</button>';
+                },
             },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
         });
+
+        // var swiper = new Swiper('.swiper-container', {
+        //     pagination: '.swiper-pagination',
+        //     paginationClickable: true,
+        //     nextButton: '.swiper-button-next',
+        //     prevButton: '.swiper-button-prev',
+        //     spaceBetween: 0,
+        //     loop: true,
+        //     effect: 'slide',
+        //     longSwipes: true,
+        //     autoplay: 2000,
+        //     autoplayDisableOnInteraction: true,
+        // });
+
+
+        // $(".swiper-container").mouseenter(function () {
+        //     swiper.stopAutoplay();
+        // });
+
+        // $(".swiper-container").mouseleave(function () {
+        //     swiper.startAutoplay();
+        // });
+
 
     </script>
 
