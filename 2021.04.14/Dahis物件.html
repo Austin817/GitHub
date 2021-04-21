@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="input_name">姓名</label>
+      <input id="input_name" type="text" />
+    </div>
+    <div>
+      <label for="input_age">年齡</label>
+      <input id="input_age" type="number" />
+    </div>
+    <div>
+      <label for="input_gender">性別</label>
+      男<input type="radio" value="男" name="gender" checked /> 女<input
+        name="gender"
+        type="radio"
+        value="女"
+      />
+    </div>
+    <div>
+      <button id="submit_btn">送出</button>
+      <button id="check_btn">查看</button>
+    </div>
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <td>姓名</td>
+          <td>年齡</td>
+          <td>性別</td>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      let personArray = [];
+      // Create fake data
+      (function appendFakeData() {
+        for (let i = 0; i < 10; i++) {
+          personArray.push({
+            name: String.fromCharCode(Math.floor(Math.random() * 24) + 65),
+            age: Math.floor(Math.random() * 70) + 10,
+            gender: Math.floor(Math.random() * 2) === 0 ? "女" : "男",
+          });
+        }
+        renderTable();
+      })();
+
+      // Create
+      submit_btn.addEventListener("click", () => {
+        personArray.push({
+          name: input_name.value,
+          age: Number(input_age.value),
+          gender: document.querySelector("input[name='gender']:checked").value,
+        });
+        renderTable();
+      });
+
+      // Delete
+      tbody.addEventListener("click", ({ target }) => {
+        if (target.className.includes("delete_btn")) {
+          personArray.splice(target.dataset.index, 1);
+          renderTable();
+        }
+      });
+
+      // Read
+      // check_btn.addEventListener("click", () => {
+      //   console.log(personArray);
+      // });
+
+      // Render
+      function renderTable() {
+        tbody.innerHTML = "";
+        personArray.forEach((person, i) => {
+          tbody.innerHTML += `
+            <tr>
+              <td>${person.name}</td>
+              <td>${person.age}</td>
+              <td>${person.gender}</td>
+              <td><button class="delete_btn" data-index="${i}">刪除</button></td>
+            </tr>
+          `;
+        });
+      }
+    </script>
+  </body>
+</html>
