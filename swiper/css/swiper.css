@@ -1,0 +1,64 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container .swiper-slide {
+  height: 700px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-container .swiper-pagination {
+  position: relative;
+}
+
+.swiper-container .swiper-pagination .pause {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.swiper-container .swiper-pagination .pause:hover span {
+  display: block;
+}
+
+.swiper-container .swiper-pagination .pause:focus {
+  background-color: #000;
+}
+
+.swiper-container .swiper-pagination .pause:focus span {
+  display: block;
+}
+
+.swiper-container .swiper-pagination .pause span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: -110px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+/*# sourceMappingURL=swiper.css.map */

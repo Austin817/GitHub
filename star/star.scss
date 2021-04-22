@@ -67,7 +67,7 @@ html {
 				@include size(5px, 5px, 50%, rgb(random(255), random(255), random(255)));
 				@include poa(random() * 30%, random() * 800px);
 
-				animation-name: flying;
+				animation-name: flying ;
 				animation-delay: random() * -1s;
 				animation-duration: (random() * 3s) + 2s;
 				animation-iteration-count: infinite;

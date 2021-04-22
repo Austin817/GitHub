@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css"
+      integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A=="
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section">
+        Some section
+        <div class="slide" data-anchor="slide1">Slide 1</div>
+        <div class="slide" data-anchor="slide2">Slide 2</div>
+      </div>
+      <div class="section">
+        Some section
+        <div class="slide" data-anchor="slide1">Slide 1</div>
+        <div class="slide" data-anchor="slide2">Slide 2</div>
+      </div>
+      <div class="section">
+        Some section
+        <div class="slide" data-anchor="slide1">Slide 1</div>
+        <div class="slide" data-anchor="slide2">Slide 2</div>
+      </div>
+      <div class="section">
+        Some section
+        <div class="slide" data-anchor="slide1">Slide 1</div>
+        <div class="slide" data-anchor="slide2">Slide 2</div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+      integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      new fullpage("#fullpage", {
+        //options here
+        autoScrolling: true,
+        scrollHorizontally: true,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ["firstSlide", "secondSlide","thirdSlide","fourSlide"],
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        // lockAnchors: false,
+        // anchors: [
+        //   "firstPage",
+        //   "secondPage",
+        //   "thirdPage",
+        //   "fourthPage",
+        // ],
+        
+      });
+    </script>
+  </body>
+</html>
