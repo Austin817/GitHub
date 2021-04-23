@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 6000px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+        .a{
+            width: 100%;
+            height: 100vh;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="a"></div>
+
+    <div class="lax box">Hello</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+
+    <script>
+      window.onload = function () {
+        lax.init();
+
+        // Add a driver that we use to control our animations
+        lax.addDriver("scrollY", function () {
+          return window.scrollY;
+        });
+
+        // Add animation bindings to elements
+        lax.addElements(".box", {
+          scrollY: {
+            translateX: [
+              ["elInY", "elCenterY", "elOutY"],
+              [0, "screenWidth/2", "screenWidth"],
+            ],
+          },
+        });
+      };
+    </script>
+  </body>
+</html>
