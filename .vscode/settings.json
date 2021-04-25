@@ -1,3 +1,14 @@
 {
-    "liveSassCompile.settings.includeItems": []
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": -1,
+    "sync.gist": "a9e6f38d9a16c9b3a84a5f43e20e01ff",
+    "liveSassCompile.settings.excludeList": [
+
+
+
+        "**/node_modules/**",
+        ".vscode/**"
+    ],
+    
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 }
