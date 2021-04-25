@@ -8,7 +8,9 @@
     <title>Document</title>
     <style>
 
-        #ans{
+        /* 3 */
+
+        /* #ans{
             width: 300px;
             height: 40px;
             border: 1px solid black;
@@ -17,7 +19,7 @@
         input[name=gender]:checked{
             width: 30px;
             height: 30px;
-        }
+        } */
 
 
     </style>
@@ -30,12 +32,12 @@
 
 
 
-    <!-- <br>國文:<input id="ch" type="text">
+    <br>國文:<input id="ch" type="text">
     英文:<input id="eng" type="text">
     數學:<input id="math" type="text"></br>
 
     結果:<div id="ans"></div>
-    <button id="calc">計算</button> -->
+    <button id="calc">計算</button>
 
 
 
@@ -44,7 +46,7 @@
 
 
 
-    年齡:
+    <!-- 年齡:
     <select name="" id="age">
         <option value="15">15</option>
         <option value="16">16</option>
@@ -70,7 +72,7 @@
     <div id="ans"></div><br><br>
 
     <button id="btn">送出</button>
-
+ -->
 
 
 
@@ -107,29 +109,29 @@
 
         // 2
 
-        // var calcBtn = document.querySelector('#calc');
+        var calcBtn = document.querySelector('#calc');
 
-        // calcBtn.addEventListener('click', function () {
-        //     var chValue = document.querySelector('#ch').value;
-        //     var engValue = document.querySelector('#eng').value;
-        //     var mathValue = document.querySelector('#math').value;
+        calcBtn.addEventListener('click', function () {
+            var chValue = document.querySelector('#ch').value;
+            var engValue = document.querySelector('#eng').value;
+            var mathValue = document.querySelector('#math').value;
 
-        //     var result = (Number(chValue) + Number(engValue) + Number(mathValue)) / 3;
+            var result = (Number(chValue) + Number(engValue) + Number(mathValue)) / 3;
 
-        //     if (result >= 90) {
-        //         document.getElementById('ans').innerHTML = result + '分，A級';
-        //     }else if (result >= 80) {
-        //         document.getElementById('ans').innerHTML = result + '分，B級';
-        //     }else if (result >= 70) {
-        //         document.getElementById('ans').innerHTML = result + '分，C級';
-        //     }else if (result >= 60) {
-        //         document.getElementById('ans').innerHTML = result + '分，D級';
-        //     }else {
-        //         document.getElementById('ans').innerHTML = result + '分，死當';
-        //     }
+            if (result >= 90) {
+                document.getElementById('ans').innerHTML = result + '分，A級';
+            }else if (result >= 80) {
+                document.getElementById('ans').innerHTML = result + '分，B級';
+            }else if (result >= 70) {
+                document.getElementById('ans').innerHTML = result + '分，C級';
+            }else if (result >= 60) {
+                document.getElementById('ans').innerHTML = result + '分，D級';
+            }else {
+                document.getElementById('ans').innerHTML = result + '分，死當';
+            }
 
 
-        // })
+        })
 
 
 
@@ -140,22 +142,22 @@
 
         // 3
 
-        var resultBtn = document.querySelector('#btn')
+        // var resultBtn = document.querySelector('#btn')
 
-        resultBtn.addEventListener('click',function(){
-            var age = Number(document.querySelector('#age').value);
-            console.log(age);
+        // resultBtn.addEventListener('click',function(){
+        //     var age = Number(document.querySelector('#age').value);
+        //     console.log(age);
 
-            var Gender = document.querySelector('input[name="gender"]:checked').value;
-            console.log(Gender);
+        //     var Gender = document.querySelector('input[name="gender"]:checked').value;
+        //     console.log(Gender);
 
-            if (age >= 18 && Gender == '男性'){
-                ans.innerHTML = `你是${age}歲${Gender}，要當兵`;
-            }else{
-                ans.innerHTML = `你是${age}歲${Gender}，不用當兵`;
-            };
+        //     if (age >= 18 && Gender == '男性'){
+        //         ans.innerHTML = `你是${age}歲${Gender}，要當兵`;
+        //     }else{
+        //         ans.innerHTML = `你是${age}歲${Gender}，不用當兵`;
+        //     };
 
-        })
+        // })
 
 
 
