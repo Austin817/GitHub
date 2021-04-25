@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ans {
+        width: 200px;
+        height: auto;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="start">開始</button>
+    <button id="clear">清除</button><br /><br />
+    <div id="ans"></div>
+
+    <script>
+      clear.addEventListener("click", function () {
+        ans.innerHTML = "";
+      });
+
+      start.addEventListener("click", function () {
+        var a, b, c, count;
+        a = 1;
+        b = 2;
+        c = 3;
+        count = 0;
+        while (true) {
+          a = Math.floor(Math.random() * 6 + 1);
+          b = Math.floor(Math.random() * 6 + 1);
+          c = Math.floor(Math.random() * 6 + 1);
+          count++;
+          ans.innerHTML = `第${count}次執行結果為&nbsp${a}${b}${c}<br> ${ans.innerHTML}`;
+          console.log(a, b, c);
+
+          if (a == b && b == c && c == a) {
+            break;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
