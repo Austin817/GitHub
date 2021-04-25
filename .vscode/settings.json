@@ -10,5 +10,5 @@
         ".vscode/**"
     ],
     
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "D:\\Git\\Git\\bin\\bash.exe",
 }
