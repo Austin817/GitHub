@@ -9,12 +9,11 @@
       html,
       body {
         position: relative;
-        height: 100%;
       }
 
       .swiper-container {
         width: 100%;
-        height: 100%;
+        height: 500px;
       }
 
       .swiper-slide {
@@ -34,6 +33,11 @@
       .pause {
         width: 30px;
         height: 30px;
+      }
+
+      .swiperBtn{
+        padding: 0;
+        margin: 0;
       }
     </style>
     <link rel="stylesheet" href="Microsoft.css" />
@@ -127,10 +131,10 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+              <img src="./IMG/RWAx8d.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/1494665/pexels-photo-1494665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+              <img src="./IMG/RE4ntGe.jpg" alt="" />
             </div>
           </div>
           <!-- Add Pagination -->
@@ -362,7 +366,7 @@
               isCratePause = true;
               return '<span class="' + className + '"></span>';
             } else {
-              return '<span class="' + className + '"></span>' + '<button class="btn"><img class="pause" src="./img/pause.png" alt=""></button>';
+              return '<span class="' + className + '"></span>' + '<button class="swiperBtn"><img class="pause" src="./img/pause.png" alt=""></button>';
             }
           },
         },
@@ -373,7 +377,7 @@
       });
 
       var pause = document.querySelector(".pause");
-      var btn = document.querySelector(".btn");
+      var btn = document.querySelector(".swiperBtn");
       var pos = 0;
 
       btn.addEventListener("click", function () {
