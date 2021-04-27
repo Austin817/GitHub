@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            width: 100px;
+            height: 50px;
+        }
+        .box1{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+        .box2{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        .box3{
+            background-color: green;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body x-data="{ open:'btn1' }">
+    <div x-text="'目前選到的區塊是:'+open"></div>
+    <div>目前選到的區塊是: <span x-text="open">btn1</span></div>
+
+    <button class="btn" @click="open='btn1'">按鈕1</button>
+    <button class="btn" @click="open='btn2'">按鈕2</button>
+    <button class="btn" @click="open='btn3'">按鈕3</button>
+
+    <div class="box1" x-show="open == 'btn1'">區塊一</div>
+    <div class="box2" x-show="open == 'btn2'">區塊二</div>
+    <div class="box3" x-show="open == 'btn3'">區塊三</div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
