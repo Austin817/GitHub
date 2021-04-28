@@ -34,6 +34,14 @@
             flex-direction: column;
             align-items: center;
         }
+        #ans{
+            width: 400px;
+            height: 30px;
+            background-color: white;
+            text-align: center;
+            border: 1px solid black;
+            color: black;
+        }
 
         #BMI{
             margin:100px 0;
@@ -43,6 +51,11 @@
             border: 1px solid black;
             padding: 0 20px;
         }
+        input{
+            text-align: center;
+        }
+
+
         
 
 
@@ -114,12 +127,10 @@
         <p>身體質量指數(Body Mass Index，簡稱BMI)是公認用來估計肥胖程度的方法</p><br>
         <p>BMI = 體重(公斤) / 身高的平方(公尺)</p><br>
         <div>
-            男性<input id="male" type="radio" name="gender" value="男性">女性<input id="male" type="radio" name="gender" value="女性">
-        </div><br><br>
-        <div>
             我的身高: <input type="number" id="height">公分&nbsp;&nbsp;&nbsp;
             我的體重: <input type="number" id="weight">公斤
         </div><br><br>
+        <div id="ans"></div><br><br>
         <div>
             <button id="calc">計算</button>
             <button id="clear">清除</button>
@@ -265,27 +276,22 @@
 
 
 
-        var calcBtn = document.querySelector('#calc');
 
-        calcBtn.addEventListener('click', function () {
-            var chValue = document.querySelector('#ch').value;
-            var engValue = document.querySelector('#eng').value;
-            var mathValue = document.querySelector('#math').value;
+        calc.addEventListener('click', function () {
 
-            var result = (Number(chValue) + Number(engValue) + Number(mathValue)) / 3;
+            var result = weight.value / ((height.value) / 100) ** 2;
 
-            if (result >= 90) {
-                document.getElementById('ans').innerHTML = result + '分，A級';
-            }else if (result >= 80) {
-                document.getElementById('ans').innerHTML = result + '分，B級';
-            }else if (result >= 70) {
-                document.getElementById('ans').innerHTML = result + '分，C級';
-            }else if (result >= 60) {
-                document.getElementById('ans').innerHTML = result + '分，D級';
-            }else {
-                document.getElementById('ans').innerHTML = result + '分，死當';
-            }
+            ans.innerHTML = result;
 
+
+        })
+
+
+        clear.addEventListener('click',function () {
+
+            ans.innerHTML = '';
+            weight.value = '';
+            height.value = '';
 
         })
 
