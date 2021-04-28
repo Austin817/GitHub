@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <style>
+        .btn{
+            width: 100px;
+            height: 50px;
+        }
+        .box1{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+        .box2{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        .box3{
+            background-color: green;
+            width: 200px;
+            height: 200px;
+        }
+        .black{
+            background-color: black;
+            height: 20px;
+        }
+        
+    </style>
+</head>
+<body x-data="setData()">
+    <img x-bind:src="img" alt="" :width="width">
+    <button class="btn" @click="changeImg()">換圖片</button>
+    <button class="btn" @click.once="width+=10">變寬</button>
+    <hr>
+    <div x-text="'目前選到的是:'+currentBox"></div>
+    <template x-for="block in blocks" :key="block">
+        <button class="btn" @click="currentBox = block['block']" x-text="block['btn']"></button>
+    </template>
+
+    <!-- <button class="btn" @click="currentBox = 'btn1'">按鈕1</button>
+    <button class="btn" @click="currentBox = 'btn2'">按鈕2</button>
+    <button class="btn" @click="currentBox = 'btn3'">按鈕3</button> -->
+    
+
+    <template x-for="block in blocks" :key="block">
+        <div :class="block['box']" x-show.transition.in.duration.1000ms="currentBox == block['block']" x-text="block['block']"></div>    
+    </template>
+
+    <!-- <div class="box1" x-show.transition.in.duration.1000ms="currentBox == '區塊一'">區塊一</div>
+    <div class="box2" x-show.transition.in.duration.1000ms="currentBox == '區塊二'">區塊二</div>
+    <div class="box3" x-show.transition.in.duration.1000ms="currentBox == '區塊三'">區塊三</div> -->
+
+
+    <div class="black"></div>
+
+    
+
+
+    <script>
+        function setData(params){
+            return {
+                currentBox: 'btn1',
+                img:'./img/cat1.jpg',
+                width:100,
+                blocks: [
+                    {
+                        btn:"按鈕1",
+                        block:"區塊一",
+                        box:"box1"
+                    },
+                    {
+                        btn:"按鈕2",
+                        block:"區塊二",
+                        box:"box2"
+                    },
+                    {
+                        btn:"按鈕3",
+                        block:"區塊三",
+                        box:"box3"
+                    },
+                ],
+                changeImg(){
+                    // alpine 這裡的 this 指changeImg()所有同層元素
+                    if(this.img == './img/cat2.jpg'){
+                        this.img = './img/cat1.jpg'
+                    }else{
+                        this.img = './img/cat2.jpg'
+                    }
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

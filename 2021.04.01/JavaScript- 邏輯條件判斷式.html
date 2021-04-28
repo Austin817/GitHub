@@ -28,9 +28,22 @@
         /* 4 */
 
 
-        th {
-            border: 1px solid black;
+        #all{
+            background-color: burlywood;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
+        #BMI{
+            margin:100px 0;
+            font-size: 20px;
+        }
+        th{
+            border: 1px solid black;
+            padding: 0 20px;
+        }
+        
 
 
 
@@ -91,21 +104,30 @@
     <!-- 4 -->
 
 
+    
+
+
 
 
     <div id="all">
         <h1>BMI 計算機</h1><br>
         <p>身體質量指數(Body Mass Index，簡稱BMI)是公認用來估計肥胖程度的方法</p><br>
         <p>BMI = 體重(公斤) / 身高的平方(公尺)</p><br>
+        <div>
+            男性<input id="male" type="radio" name="gender" value="男性">女性<input id="male" type="radio" name="gender" value="女性">
+        </div><br><br>
+        <div>
+            我的身高: <input type="number" id="height">公分&nbsp;&nbsp;&nbsp;
+            我的體重: <input type="number" id="weight">公斤
+        </div><br><br>
+        <div>
+            <button id="calc">計算</button>
+            <button id="clear">清除</button>
+        </div>
     
-        我的身高: <input type="text" id="height">公分&nbsp;&nbsp;&nbsp;
-        我的體重: <input type="text" id="weight">公斤&nbsp;&nbsp;&nbsp;
-        <button id="calc">計算</button>
-        <button id="clear">清除</button>    
 
 
-
-        <table>
+        <table id="BMI">
             <thead>
                 <tr>
                     <th></th>
@@ -148,8 +170,6 @@
         </table>
        
     </div>
-
-    
 
 
 
