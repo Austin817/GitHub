@@ -23,12 +23,18 @@
         }
 
         #BMI{
-            margin:100px 0;
+            margin:80px 0;
             font-size: 20px;
+        }
+        tr{
+            background-color: cadetblue;
         }
         th{
             border: 1px solid black;
-            padding: 0 20px;
+            padding: 10px 30px;
+        }
+        #BMI tbody tr{
+            transition: all .5s;
         }
 
         
@@ -50,7 +56,6 @@
         </div><br><br>
         <div id="ans" x-text="bmi()"></div><br><br>
         <div>
-            <button id="calc">計算</button>
             <button id="clear" @click="clear()">清除</button>
         </div>
     
@@ -59,40 +64,29 @@
         <table id="BMI">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>狀態</th>
                     <th>BMI值</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th>姓別</th>
-                    <th>男性</th>
-                    <th>女性</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr :style="BMIstatus(1, 20)">
                     <th>體重過輕</th>
                     <th>＜20</th>
-                    <th>＜19</th>
                 </tr>
-                <tr>
+                <tr :style="BMIstatus(20, 25)">
                     <th>正常範圍</th>
                     <th>20-25</th>
-                    <th>19-25</th>
                 </tr>
-                <tr>
+                <tr :style="BMIstatus(25, 30)">
                     <th>體重過重</th>
                     <th>25-30</th>
-                    <th>25-30</th>
                 </tr>
-                <tr>
+                <tr :style="BMIstatus(30, 40)">
                     <th>肥胖</th>
                     <th>30-40</th>
-                    <th>30-40</th>
                 </tr>
-                <tr>
+                <tr :style="BMIstatus(40, 99)">
                     <th>病態肥胖</th>
-                    <th>＞40</th>
                     <th>＞40</th>
                 </tr>
             </tbody>
@@ -105,16 +99,24 @@
             return {
                 height:0,
                 weight:0,
-                bmi(){
+                bmi() {
                     var anser = this.weight / ((this.height / 100) ** 2);
                     // 條件式 ? true : false  //判斷是為true輸出anser，判斷是為false輸出0
-                    return anser ? anser : 0
+                    return anser ? anser.toFixed(1) : " ";
                 },
-                clear(){
+                clear() {
                     this.height = 0;
                     this.weight = 0;
                 },
-            }
+                BMIstatus(min,max) {
+                    var bmi = this.bmi();
+                    var ansColor = "";
+                    if (bmi >= min && bmi < max){
+                        ansColor = "background-color: darkorange;"; 
+                    }
+                    return ansColor;
+                }
+            };
         }
     </script>
     

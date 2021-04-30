@@ -8,10 +8,28 @@
     <title>Document</title>
 </head>
 <style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        background-color: wheat;
+    }
+
     .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        background-color: white;
+        box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
         transition: 0.3s;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 5%;
+        padding-top: 8%;
+    }
+
+    .card img{
+        width: 40%;
     }
 
 
@@ -88,12 +106,19 @@
                     var rain = data[index]["weatherElement"][1]["time"][1]["parameter"]["parameterName"];
                     var status = data[index]["weatherElement"][0]["time"][1]["parameter"]["parameterName"];
                     var statusNumber = data[index]["weatherElement"][0]["time"][1]["parameter"]["parameterValue"];
-                    console.log(statusNumber);
+
+                    if (statusNumber > 0 && statusNumber <= 3){
+                        var picture = './img/sunny.png'
+                    }else if(statusNumber > 3 && statusNumber <=7){
+                        var picture = './img/cloud.png'
+                    }else if(statusNumber > 7){
+                        var picture = './img/cloudy.png' 
+                    }
 
                     container.innerHTML +=
                     `
                     <div class="card">
-                        <img src="img_avatar.png" alt="Avatar" style="width:100%">
+                        <img src="${picture}" alt="Avatar">
                         <div class="container">
                             <h4>縣市 : ${city}</h4>
                             <p>時間 : ${time}</p>
@@ -103,11 +128,6 @@
                         </div>
                     </div>`
                 });
-
-
-
-
-
 
 
 
